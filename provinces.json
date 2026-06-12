@@ -1,0 +1,67 @@
+{
+  "provinces": [
+    {
+      "name": "Gauteng",
+      "chair": "Mr. Midday Mali",
+      "seat": "Sedibeng Region",
+      "photo": "",
+      "description": "The economic heartland, home to the busiest taxi corridors linking Johannesburg, Tshwane and Ekurhuleni."
+    },
+    {
+      "name": "KwaZulu-Natal",
+      "chair": "Mr. BB Zondi",
+      "seat": "Durban",
+      "photo": "",
+      "description": "One of the largest provincial structures, with 246 affiliated associations serving coastal and inland routes."
+    },
+    {
+      "name": "Western Cape",
+      "chair": "Mr. B Ndungane",
+      "seat": "Cape Town",
+      "photo": "",
+      "description": "Coordinates the industry across the Cape metro and the province's rural districts."
+    },
+    {
+      "name": "Eastern Cape",
+      "chair": "Provincial Council",
+      "seat": "Bhisho",
+      "photo": "",
+      "description": "Serves extensive rural and inter-town routes across one of the country's largest provinces."
+    },
+    {
+      "name": "Free State",
+      "chair": "Provincial Council",
+      "seat": "Bloemfontein",
+      "photo": "",
+      "description": "Connects the central province's towns and the busy N1 corridor."
+    },
+    {
+      "name": "Limpopo",
+      "chair": "Provincial Council",
+      "seat": "Polokwane",
+      "photo": "",
+      "description": "Links Limpopo's communities and key cross-border routes to the north."
+    },
+    {
+      "name": "Mpumalanga",
+      "chair": "Provincial Council",
+      "seat": "Mbombela",
+      "photo": "",
+      "description": "Serves the eastern province's mining towns, agricultural hubs and tourism routes."
+    },
+    {
+      "name": "North West",
+      "chair": "Provincial Council",
+      "seat": "Mahikeng",
+      "photo": "",
+      "description": "Coordinates routes across the province's towns and mining communities."
+    },
+    {
+      "name": "Northern Cape",
+      "chair": "Provincial Council",
+      "seat": "Kimberley",
+      "photo": "",
+      "description": "Covers the vast distances of South Africa's largest province by area."
+    }
+  ]
+}

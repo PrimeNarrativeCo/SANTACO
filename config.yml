@@ -1,0 +1,168 @@
+# =============================================================
+#  SANTACO — Decap CMS configuration
+#  Edit nothing here unless you change the data structure.
+# =============================================================
+
+# ---- BACKEND ----
+# Login is handled by GitHub (Netlify Identity / Git Gateway are deprecated).
+# Fill in your repo, and the Worker URL you create in the setup steps.
+backend:
+  name: github
+  repo: YOUR-GITHUB-USERNAME/YOUR-REPO-NAME   # e.g. amukelani/santaco-website
+  branch: main                                # your default branch
+  base_url: https://YOUR-WORKER-SUBDOMAIN.workers.dev   # the Cloudflare Worker URL from the setup steps
+
+# Lets you test the editor on your own computer before going live
+# (run `npx decap-server` then open http://localhost:8080/admin/)
+local_backend: true
+
+# Where uploaded pictures are stored / linked from
+media_folder: "images/uploads"
+public_folder: "images/uploads"
+
+# Friendlier editor experience
+publish_mode: simple
+site_url: /
+display_url: /
+
+collections:
+  # ---------- 1. WORDING & MAIN IMAGES ----------
+  - name: "site"
+    label: "Wording & Main Images"
+    description: "Edit the homepage headline, the President's message, mission, vision and the main pictures."
+    files:
+      - name: "home"
+        label: "Home & President"
+        file: "data/site.json"
+        fields:
+          - { label: "Headline — first part", name: "hero_title_pre", widget: "string" }
+          - { label: "Headline — highlighted word", name: "hero_title_em", widget: "string" }
+          - { label: "Headline — last part", name: "hero_title_post", widget: "string" }
+          - { label: "Intro paragraph", name: "hero_lead", widget: "text" }
+          - { label: "Main hero image", name: "hero_image", widget: "image" }
+          - { label: "President — name", name: "president_name", widget: "string" }
+          - { label: "President — role", name: "president_role", widget: "string" }
+          - { label: "President — message", name: "president_quote", widget: "text" }
+          - { label: "President — photo", name: "president_photo", widget: "image", required: false }
+          - { label: "Mission statement", name: "mission", widget: "text" }
+          - { label: "Vision statement", name: "vision", widget: "text" }
+
+  # ---------- 2. MEDIA STATEMENTS ----------
+  - name: "statements"
+    label: "Media Statements"
+    description: "Add, edit, reorder or remove media statements shown in the Media Centre."
+    files:
+      - name: "statements"
+        label: "All statements"
+        file: "data/statements.json"
+        fields:
+          - label: "Statements"
+            name: "statements"
+            label_singular: "Statement"
+            widget: "list"
+            summary: "{{fields.date}} — {{fields.title}}"
+            fields:
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "Date (e.g. 27 May 2026)", name: "date", widget: "string" }
+              - label: "Category"
+                name: "category"
+                widget: "select"
+                options:
+                  - { label: "National", value: "national" }
+                  - { label: "Policy", value: "policy" }
+                  - { label: "Industry", value: "industry" }
+                  - { label: "Public Announcement", value: "public" }
+                  - { label: "Tribute", value: "tribute" }
+              - { label: "Category label (shown on card)", name: "catlabel", widget: "string" }
+              - { label: "Summary", name: "summary", widget: "text" }
+              - { label: "Image", name: "image", widget: "image", required: false }
+
+  # ---------- 3. EVENTS ----------
+  - name: "events"
+    label: "Events"
+    description: "Add, edit, reorder or remove events shown on the homepage."
+    files:
+      - name: "events"
+        label: "All events"
+        file: "data/events.json"
+        fields:
+          - label: "Events"
+            name: "events"
+            label_singular: "Event"
+            widget: "list"
+            summary: "{{fields.day}} {{fields.month}} — {{fields.title}}"
+            fields:
+              - label: "Status"
+                name: "status"
+                widget: "select"
+                options: ["Upcoming", "Ongoing", "Concluded"]
+              - { label: "Day or label (e.g. 25 or Q2)", name: "day", widget: "string" }
+              - { label: "Month / year (e.g. Feb 2026)", name: "month", widget: "string" }
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "Location", name: "location", widget: "string" }
+              - { label: "Detail line", name: "audience", widget: "string" }
+
+  # ---------- 4. GALLERY PICTURES ----------
+  - name: "gallery"
+    label: "Gallery Pictures"
+    description: "Add or replace the photos in the homepage gallery."
+    files:
+      - name: "gallery"
+        label: "Photos"
+        file: "data/gallery.json"
+        fields:
+          - label: "Images"
+            name: "images"
+            label_singular: "Photo"
+            widget: "list"
+            summary: "{{fields.caption}}"
+            fields:
+              - { label: "Image", name: "image", widget: "image" }
+              - { label: "Caption", name: "caption", widget: "string", required: false }
+
+  # ---------- 5. NATIONAL EXECUTIVE (LEADERS) ----------
+  - name: "leaders"
+    label: "National Executive"
+    description: "Edit the nine national office-bearers — names, titles, province and photos."
+    files:
+      - name: "leaders"
+        label: "Office-bearers"
+        file: "data/leaders.json"
+        fields:
+          - label: "Leaders"
+            name: "leaders"
+            label_singular: "Leader"
+            widget: "list"
+            summary: "{{fields.title}} — {{fields.name}}"
+            fields:
+              - { label: "Position / title", name: "title", widget: "string" }
+              - { label: "Full name", name: "name", widget: "string" }
+              - label: "Province"
+                name: "province"
+                widget: "select"
+                options: ["Gauteng","KwaZulu-Natal","Western Cape","Eastern Cape","Free State","Limpopo","Mpumalanga","North West","Northern Cape"]
+              - { label: "Photo", name: "photo", widget: "image", required: false }
+
+  # ---------- 6. PROVINCIAL COUNCILS ----------
+  - name: "provinces"
+    label: "Provincial Councils"
+    description: "Edit each province's chairperson, seat, description and photo. (Province names are fixed so the map keeps working.)"
+    files:
+      - name: "provinces"
+        label: "Provinces"
+        file: "data/provinces.json"
+        fields:
+          - label: "Provinces"
+            name: "provinces"
+            label_singular: "Province"
+            widget: "list"
+            summary: "{{fields.name}} — {{fields.chair}}"
+            fields:
+              - label: "Province (do not rename)"
+                name: "name"
+                widget: "select"
+                options: ["Gauteng","KwaZulu-Natal","Western Cape","Eastern Cape","Free State","Limpopo","Mpumalanga","North West","Northern Cape"]
+              - { label: "Chairperson", name: "chair", widget: "string" }
+              - { label: "Seat / head office", name: "seat", widget: "string" }
+              - { label: "Description", name: "description", widget: "text" }
+              - { label: "Photo", name: "photo", widget: "image", required: false }

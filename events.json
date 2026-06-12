@@ -1,0 +1,28 @@
+{
+  "events": [
+    {
+      "status": "Concluded",
+      "day": "25",
+      "month": "Feb 2026",
+      "title": "National Elective Conference",
+      "location": "Birchwood Hotel & OR Tambo, Ekurhuleni",
+      "audience": "National delegates · 9 provinces"
+    },
+    {
+      "status": "Upcoming",
+      "day": "Q2",
+      "month": "2026",
+      "title": "National Policy Conference",
+      "location": "Venue to be confirmed",
+      "audience": "All modes & provincial delegations"
+    },
+    {
+      "status": "Ongoing",
+      "day": "'26",
+      "month": "Nationwide",
+      "title": "Hlokomela Safety Roadshows",
+      "location": "Provincial ranks & corridors",
+      "audience": "Driver training & awareness"
+    }
+  ]
+}

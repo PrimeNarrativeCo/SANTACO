@@ -1,0 +1,58 @@
+{
+  "leaders": [
+    {
+      "title": "President",
+      "name": "Motlhabane Abnar Tsebe",
+      "province": "Gauteng",
+      "photo": ""
+    },
+    {
+      "title": "First Deputy President",
+      "name": "BB Zondi",
+      "province": "KwaZulu-Natal",
+      "photo": ""
+    },
+    {
+      "title": "Second Deputy President",
+      "name": "Joe Sibanyoni",
+      "province": "Mpumalanga",
+      "photo": ""
+    },
+    {
+      "title": "National Chairperson",
+      "name": "L Mabija",
+      "province": "Eastern Cape",
+      "photo": ""
+    },
+    {
+      "title": "Secretary-General",
+      "name": "D Qumbu",
+      "province": "Free State",
+      "photo": ""
+    },
+    {
+      "title": "Deputy Secretary-General",
+      "name": "SD Mayekani",
+      "province": "North West",
+      "photo": ""
+    },
+    {
+      "title": "Treasurer-General",
+      "name": "N Aburagman",
+      "province": "Western Cape",
+      "photo": ""
+    },
+    {
+      "title": "Training Officer",
+      "name": "ME Konki",
+      "province": "Northern Cape",
+      "photo": ""
+    },
+    {
+      "title": "Public Relations Officer",
+      "name": "SJ Masemola",
+      "province": "Limpopo",
+      "photo": ""
+    }
+  ]
+}
