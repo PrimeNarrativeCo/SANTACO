@@ -8,9 +8,9 @@
 # Fill in your repo, and the Worker URL you create in the setup steps.
 backend:
   name: github
-  repo: YOUR-GITHUB-USERNAME/YOUR-REPO-NAME   # e.g. amukelani/santaco-website
+  repo: primenarrativeco/santaco-website   # e.g. amukelani/santaco-website
   branch: main                                # your default branch
-  base_url: https://YOUR-WORKER-SUBDOMAIN.workers.dev   # the Cloudflare Worker URL from the setup steps
+  base_url: https://sveltia-cms-auth.primenarrativeco.workers.dev/   # the Cloudflare Worker URL from the setup steps
 
 # Lets you test the editor on your own computer before going live
 # (run `npx decap-server` then open http://localhost:8080/admin/)
